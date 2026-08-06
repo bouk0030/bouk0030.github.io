@@ -1,0 +1,50 @@
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+html {
+  font-family: Arial, halvetica, sans-serif;
+  font-size: 18px;
+}
+.grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-areas:
+    "c2 c4 c1"
+    "c2 c4 c6"
+    ".  c5 ." ;
+  gap: 0.25rem;
+}
+.grid  div:nth-child(1) {
+  background-color: red;
+  grid-area: c1;
+}
+.grid  div:nth-child(2) {
+  background-color: blue;
+  grid-area: c2;
+}
+.grid  div:nth-child(3) {
+  background-color: green;
+  grid-area: c3;
+}
+.grid  div:nth-child(4) {
+  background-color: yellow;
+  grid-area: c4;
+}
+.grid  div:nth-child(5) {
+  background-color: orange;
+  grid-area: c5;
+}
+.grid  div:nth-child(6) {
+  background-color: purple;
+  grid-area: c6;
+}
+@media screen and (min-width: 600px) {
+  .grid {
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-areas:
+      "c1 c2 c3"
+      "c4 c5 c6";
+  }
+}
